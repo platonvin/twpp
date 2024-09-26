@@ -17,7 +17,13 @@ def generate_cpp_color_function(color_name, shades):
     cpp_lines.append('    switch (shade) {')
     for shade, hex_color in shades.items():
         cpp_lines.append(f'        case {shade}: return {hex_to_rgb_tuple(hex_color)};')
-    cpp_lines.append('        default: throw std::out_of_range("shade not found");') # was assert better?
+
+    cpp_lines.append('#ifdef TWPP_USE_EXCEPTIONS')
+    cpp_lines.append('        default: throw std::out_of_range("shade not found");')
+    cpp_lines.append('#else')
+    cpp_lines.append('        default: assert(false && "specified shade not found");')
+    cpp_lines.append('#endif')
+
     cpp_lines.append('    }')
     cpp_lines.append('}')
     return '\n'.join(cpp_lines)

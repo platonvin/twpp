@@ -3,8 +3,11 @@
 #define TWPP_HPP
 
 #include <glm/glm.hpp>
-// #include <cassert>
+#ifdef TWPP_USE_EXCEPTIONS
 #include <stdexcept>
+#else
+#include <cassert>
+#endif
 
 namespace twpp {
     constexpr glm::vec3 hex_to_rgb(unsigned int hex) {
