@@ -11,7 +11,7 @@ constexpr glm::vec3 slate(int shade) {
         case 800: return glm::vec3(0.117647, 0.160784, 0.231373);
         case 900: return glm::vec3(0.058824, 0.090196, 0.164706);
         case 950: return glm::vec3(0.007843, 0.023529, 0.090196);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -28,7 +28,7 @@ constexpr glm::vec3 gray(int shade) {
         case 800: return glm::vec3(0.121569, 0.160784, 0.215686);
         case 900: return glm::vec3(0.066667, 0.094118, 0.152941);
         case 950: return glm::vec3(0.011765, 0.027451, 0.070588);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -45,7 +45,7 @@ constexpr glm::vec3 zinc(int shade) {
         case 800: return glm::vec3(0.152941, 0.152941, 0.164706);
         case 900: return glm::vec3(0.094118, 0.094118, 0.105882);
         case 950: return glm::vec3(0.035294, 0.035294, 0.043137);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -62,7 +62,7 @@ constexpr glm::vec3 neutral(int shade) {
         case 800: return glm::vec3(0.149020, 0.149020, 0.149020);
         case 900: return glm::vec3(0.090196, 0.090196, 0.090196);
         case 950: return glm::vec3(0.039216, 0.039216, 0.039216);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -79,7 +79,7 @@ constexpr glm::vec3 stone(int shade) {
         case 800: return glm::vec3(0.160784, 0.145098, 0.141176);
         case 900: return glm::vec3(0.109804, 0.098039, 0.090196);
         case 950: return glm::vec3(0.047059, 0.039216, 0.035294);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -96,7 +96,7 @@ constexpr glm::vec3 red(int shade) {
         case 800: return glm::vec3(0.600000, 0.105882, 0.105882);
         case 900: return glm::vec3(0.498039, 0.113725, 0.113725);
         case 950: return glm::vec3(0.270588, 0.039216, 0.039216);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -113,7 +113,7 @@ constexpr glm::vec3 orange(int shade) {
         case 800: return glm::vec3(0.603922, 0.203922, 0.070588);
         case 900: return glm::vec3(0.486275, 0.176471, 0.070588);
         case 950: return glm::vec3(0.262745, 0.078431, 0.027451);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -130,7 +130,7 @@ constexpr glm::vec3 amber(int shade) {
         case 800: return glm::vec3(0.572549, 0.250980, 0.054902);
         case 900: return glm::vec3(0.470588, 0.207843, 0.058824);
         case 950: return glm::vec3(0.270588, 0.101961, 0.011765);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -147,7 +147,7 @@ constexpr glm::vec3 yellow(int shade) {
         case 800: return glm::vec3(0.521569, 0.301961, 0.054902);
         case 900: return glm::vec3(0.443137, 0.247059, 0.070588);
         case 950: return glm::vec3(0.258824, 0.125490, 0.023529);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -164,7 +164,7 @@ constexpr glm::vec3 lime(int shade) {
         case 800: return glm::vec3(0.247059, 0.384314, 0.070588);
         case 900: return glm::vec3(0.211765, 0.325490, 0.078431);
         case 950: return glm::vec3(0.101961, 0.180392, 0.019608);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -181,7 +181,7 @@ constexpr glm::vec3 green(int shade) {
         case 800: return glm::vec3(0.086275, 0.396078, 0.203922);
         case 900: return glm::vec3(0.078431, 0.325490, 0.176471);
         case 950: return glm::vec3(0.019608, 0.180392, 0.086275);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -198,7 +198,7 @@ constexpr glm::vec3 emerald(int shade) {
         case 800: return glm::vec3(0.023529, 0.372549, 0.274510);
         case 900: return glm::vec3(0.023529, 0.305882, 0.231373);
         case 950: return glm::vec3(0.007843, 0.172549, 0.133333);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -215,7 +215,7 @@ constexpr glm::vec3 teal(int shade) {
         case 800: return glm::vec3(0.066667, 0.368627, 0.349020);
         case 900: return glm::vec3(0.074510, 0.305882, 0.290196);
         case 950: return glm::vec3(0.015686, 0.184314, 0.180392);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -232,7 +232,7 @@ constexpr glm::vec3 cyan(int shade) {
         case 800: return glm::vec3(0.082353, 0.368627, 0.458824);
         case 900: return glm::vec3(0.086275, 0.305882, 0.388235);
         case 950: return glm::vec3(0.031373, 0.200000, 0.266667);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -249,7 +249,7 @@ constexpr glm::vec3 sky(int shade) {
         case 800: return glm::vec3(0.027451, 0.349020, 0.521569);
         case 900: return glm::vec3(0.047059, 0.290196, 0.431373);
         case 950: return glm::vec3(0.031373, 0.184314, 0.286275);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -266,7 +266,7 @@ constexpr glm::vec3 blue(int shade) {
         case 800: return glm::vec3(0.117647, 0.250980, 0.686275);
         case 900: return glm::vec3(0.117647, 0.227451, 0.541176);
         case 950: return glm::vec3(0.090196, 0.145098, 0.329412);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -283,7 +283,7 @@ constexpr glm::vec3 indigo(int shade) {
         case 800: return glm::vec3(0.215686, 0.188235, 0.639216);
         case 900: return glm::vec3(0.192157, 0.180392, 0.505882);
         case 950: return glm::vec3(0.117647, 0.105882, 0.294118);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -300,7 +300,7 @@ constexpr glm::vec3 violet(int shade) {
         case 800: return glm::vec3(0.356863, 0.129412, 0.713725);
         case 900: return glm::vec3(0.298039, 0.113725, 0.584314);
         case 950: return glm::vec3(0.180392, 0.062745, 0.396078);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -317,7 +317,7 @@ constexpr glm::vec3 purple(int shade) {
         case 800: return glm::vec3(0.419608, 0.129412, 0.658824);
         case 900: return glm::vec3(0.345098, 0.109804, 0.529412);
         case 950: return glm::vec3(0.231373, 0.027451, 0.392157);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -334,7 +334,7 @@ constexpr glm::vec3 fuchsia(int shade) {
         case 800: return glm::vec3(0.525490, 0.098039, 0.560784);
         case 900: return glm::vec3(0.439216, 0.101961, 0.458824);
         case 950: return glm::vec3(0.290196, 0.015686, 0.305882);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -351,7 +351,7 @@ constexpr glm::vec3 pink(int shade) {
         case 800: return glm::vec3(0.615686, 0.090196, 0.301961);
         case 900: return glm::vec3(0.513725, 0.094118, 0.262745);
         case 950: return glm::vec3(0.313725, 0.027451, 0.141176);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
 
@@ -368,6 +368,6 @@ constexpr glm::vec3 rose(int shade) {
         case 800: return glm::vec3(0.623529, 0.070588, 0.223529);
         case 900: return glm::vec3(0.533333, 0.074510, 0.215686);
         case 950: return glm::vec3(0.298039, 0.019608, 0.098039);
-        default: assert(false && "shade not found");
+        default: throw std::out_of_range("shade not found");
     }
 }
