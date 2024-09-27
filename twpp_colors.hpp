@@ -1,4 +1,4 @@
-constexpr ColorProxy slate(int shade) {
+constexpr ColorProxy slate(const int shade) {
     switch (shade) {
         case 50: return colorType(248, 250, 252);
         case 100: return colorType(241, 245, 249);
@@ -11,15 +11,16 @@ constexpr ColorProxy slate(int shade) {
         case 800: return colorType(30, 41, 59);
         case 900: return colorType(15, 23, 42);
         case 950: return colorType(2, 6, 23);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy gray(int shade) {
+constexpr ColorProxy gray(const int shade) {
     switch (shade) {
         case 50: return colorType(249, 250, 251);
         case 100: return colorType(243, 244, 246);
@@ -32,15 +33,16 @@ constexpr ColorProxy gray(int shade) {
         case 800: return colorType(31, 41, 55);
         case 900: return colorType(17, 24, 39);
         case 950: return colorType(3, 7, 18);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy zinc(int shade) {
+constexpr ColorProxy zinc(const int shade) {
     switch (shade) {
         case 50: return colorType(250, 250, 250);
         case 100: return colorType(244, 244, 245);
@@ -53,15 +55,16 @@ constexpr ColorProxy zinc(int shade) {
         case 800: return colorType(39, 39, 42);
         case 900: return colorType(24, 24, 27);
         case 950: return colorType(9, 9, 11);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy neutral(int shade) {
+constexpr ColorProxy neutral(const int shade) {
     switch (shade) {
         case 50: return colorType(250, 250, 250);
         case 100: return colorType(245, 245, 245);
@@ -74,15 +77,16 @@ constexpr ColorProxy neutral(int shade) {
         case 800: return colorType(38, 38, 38);
         case 900: return colorType(23, 23, 23);
         case 950: return colorType(10, 10, 10);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy stone(int shade) {
+constexpr ColorProxy stone(const int shade) {
     switch (shade) {
         case 50: return colorType(250, 250, 249);
         case 100: return colorType(245, 245, 244);
@@ -95,15 +99,16 @@ constexpr ColorProxy stone(int shade) {
         case 800: return colorType(41, 37, 36);
         case 900: return colorType(28, 25, 23);
         case 950: return colorType(12, 10, 9);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy red(int shade) {
+constexpr ColorProxy red(const int shade) {
     switch (shade) {
         case 50: return colorType(254, 242, 242);
         case 100: return colorType(254, 226, 226);
@@ -116,15 +121,16 @@ constexpr ColorProxy red(int shade) {
         case 800: return colorType(153, 27, 27);
         case 900: return colorType(127, 29, 29);
         case 950: return colorType(69, 10, 10);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy orange(int shade) {
+constexpr ColorProxy orange(const int shade) {
     switch (shade) {
         case 50: return colorType(255, 247, 237);
         case 100: return colorType(255, 237, 213);
@@ -137,15 +143,16 @@ constexpr ColorProxy orange(int shade) {
         case 800: return colorType(154, 52, 18);
         case 900: return colorType(124, 45, 18);
         case 950: return colorType(67, 20, 7);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy amber(int shade) {
+constexpr ColorProxy amber(const int shade) {
     switch (shade) {
         case 50: return colorType(255, 251, 235);
         case 100: return colorType(254, 243, 199);
@@ -158,15 +165,16 @@ constexpr ColorProxy amber(int shade) {
         case 800: return colorType(146, 64, 14);
         case 900: return colorType(120, 53, 15);
         case 950: return colorType(69, 26, 3);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy yellow(int shade) {
+constexpr ColorProxy yellow(const int shade) {
     switch (shade) {
         case 50: return colorType(254, 252, 232);
         case 100: return colorType(254, 249, 195);
@@ -179,15 +187,16 @@ constexpr ColorProxy yellow(int shade) {
         case 800: return colorType(133, 77, 14);
         case 900: return colorType(113, 63, 18);
         case 950: return colorType(66, 32, 6);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy lime(int shade) {
+constexpr ColorProxy lime(const int shade) {
     switch (shade) {
         case 50: return colorType(247, 254, 231);
         case 100: return colorType(236, 252, 203);
@@ -200,15 +209,16 @@ constexpr ColorProxy lime(int shade) {
         case 800: return colorType(63, 98, 18);
         case 900: return colorType(54, 83, 20);
         case 950: return colorType(26, 46, 5);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy green(int shade) {
+constexpr ColorProxy green(const int shade) {
     switch (shade) {
         case 50: return colorType(240, 253, 244);
         case 100: return colorType(220, 252, 231);
@@ -221,15 +231,16 @@ constexpr ColorProxy green(int shade) {
         case 800: return colorType(22, 101, 52);
         case 900: return colorType(20, 83, 45);
         case 950: return colorType(5, 46, 22);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy emerald(int shade) {
+constexpr ColorProxy emerald(const int shade) {
     switch (shade) {
         case 50: return colorType(236, 253, 245);
         case 100: return colorType(209, 250, 229);
@@ -242,15 +253,16 @@ constexpr ColorProxy emerald(int shade) {
         case 800: return colorType(6, 95, 70);
         case 900: return colorType(6, 78, 59);
         case 950: return colorType(2, 44, 34);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy teal(int shade) {
+constexpr ColorProxy teal(const int shade) {
     switch (shade) {
         case 50: return colorType(240, 253, 250);
         case 100: return colorType(204, 251, 241);
@@ -263,15 +275,16 @@ constexpr ColorProxy teal(int shade) {
         case 800: return colorType(17, 94, 89);
         case 900: return colorType(19, 78, 74);
         case 950: return colorType(4, 47, 46);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy cyan(int shade) {
+constexpr ColorProxy cyan(const int shade) {
     switch (shade) {
         case 50: return colorType(236, 254, 255);
         case 100: return colorType(207, 250, 254);
@@ -284,15 +297,16 @@ constexpr ColorProxy cyan(int shade) {
         case 800: return colorType(21, 94, 117);
         case 900: return colorType(22, 78, 99);
         case 950: return colorType(8, 51, 68);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy sky(int shade) {
+constexpr ColorProxy sky(const int shade) {
     switch (shade) {
         case 50: return colorType(240, 249, 255);
         case 100: return colorType(224, 242, 254);
@@ -305,15 +319,16 @@ constexpr ColorProxy sky(int shade) {
         case 800: return colorType(7, 89, 133);
         case 900: return colorType(12, 74, 110);
         case 950: return colorType(8, 47, 73);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy blue(int shade) {
+constexpr ColorProxy blue(const int shade) {
     switch (shade) {
         case 50: return colorType(239, 246, 255);
         case 100: return colorType(219, 234, 254);
@@ -326,15 +341,16 @@ constexpr ColorProxy blue(int shade) {
         case 800: return colorType(30, 64, 175);
         case 900: return colorType(30, 58, 138);
         case 950: return colorType(23, 37, 84);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy indigo(int shade) {
+constexpr ColorProxy indigo(const int shade) {
     switch (shade) {
         case 50: return colorType(238, 242, 255);
         case 100: return colorType(224, 231, 255);
@@ -347,15 +363,16 @@ constexpr ColorProxy indigo(int shade) {
         case 800: return colorType(55, 48, 163);
         case 900: return colorType(49, 46, 129);
         case 950: return colorType(30, 27, 75);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy violet(int shade) {
+constexpr ColorProxy violet(const int shade) {
     switch (shade) {
         case 50: return colorType(245, 243, 255);
         case 100: return colorType(237, 233, 254);
@@ -368,15 +385,16 @@ constexpr ColorProxy violet(int shade) {
         case 800: return colorType(91, 33, 182);
         case 900: return colorType(76, 29, 149);
         case 950: return colorType(46, 16, 101);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy purple(int shade) {
+constexpr ColorProxy purple(const int shade) {
     switch (shade) {
         case 50: return colorType(250, 245, 255);
         case 100: return colorType(243, 232, 255);
@@ -389,15 +407,16 @@ constexpr ColorProxy purple(int shade) {
         case 800: return colorType(107, 33, 168);
         case 900: return colorType(88, 28, 135);
         case 950: return colorType(59, 7, 100);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy fuchsia(int shade) {
+constexpr ColorProxy fuchsia(const int shade) {
     switch (shade) {
         case 50: return colorType(253, 244, 255);
         case 100: return colorType(250, 232, 255);
@@ -410,11 +429,12 @@ constexpr ColorProxy fuchsia(int shade) {
         case 800: return colorType(134, 25, 143);
         case 900: return colorType(112, 26, 117);
         case 950: return colorType(74, 4, 78);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
@@ -431,15 +451,16 @@ constexpr ColorProxy pink(int shade) {
         case 800: return colorType(157, 23, 77);
         case 900: return colorType(131, 24, 67);
         case 950: return colorType(80, 7, 36);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }
 
-constexpr ColorProxy rose(int shade) {
+constexpr ColorProxy rose(const int shade) {
     switch (shade) {
         case 50: return colorType(255, 241, 242);
         case 100: return colorType(255, 228, 230);
@@ -452,10 +473,11 @@ constexpr ColorProxy rose(int shade) {
         case 800: return colorType(159, 18, 57);
         case 900: return colorType(136, 19, 55);
         case 950: return colorType(76, 5, 25);
-#ifdef TWPP_USE_EXCEPTIONS
-        default: throw std::out_of_range("shade not found");
+#ifdef TWPP_NO_EXCEPTIONS
+        default: assert(false && "Shade not found. Choose another one or define it yourself\n");
 #else
-        default: assert(false && "specified shade not found");
+        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");
 #endif
+return colorType(255, 12, 220);
     }
 }

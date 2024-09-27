@@ -13,17 +13,29 @@ def hex_to_rgb_tuple(hex_color):
     return f'colorType({r}, {g}, {b})'
 
 def generate_cpp_color_function(color_name, shades):
-    cpp_lines = [f'constexpr ColorProxy {color_name}(int shade) {{']
+    cpp_lines = [f'constexpr ColorProxy {color_name}(const int shade) {{']
     cpp_lines.append('    switch (shade) {')
     for shade, hex_color in shades.items():
         cpp_lines.append(f'        case {shade}: return {hex_to_rgb_tuple(hex_color)};')
-
-    cpp_lines.append('#ifdef TWPP_USE_EXCEPTIONS')
-    cpp_lines.append('        default: throw std::out_of_range("shade not found");')
+    cpp_lines.append('#ifdef TWPP_NO_EXCEPTIONS')
+    cpp_lines.append('        default: assert(false && "Shade not found. Choose another one or define it yourself\\n");')
+    # cpp_lines.append('        default: printf("Shade not found. Choose another one or define it yourself\\n");')
     cpp_lines.append('#else')
-    cpp_lines.append('        default: assert(false && "specified shade not found");')
+    cpp_lines.append('        default: throw std::out_of_range("Shade not found. Choose another one or define it yourself");')
     cpp_lines.append('#endif')
 
+    # cpp_lines.append('#ifdef TWPP_NO_EXCEPTIONS')
+    # cpp_lines.append('        default: exit(666);')
+    # cpp_lines.append('#else')
+    # cpp_lines.append('        default: throw std::out_of_range("shade not found");')
+    # cpp_lines.append('#endif')
+
+    # cpp_lines.append('    if (false) {}')
+    # for shade, hex_color in shades.items():
+    #     cpp_lines.append(f'    else if (shade=={shade}) {{ return {hex_to_rgb_tuple(hex_color)}; }}')
+    # cpp_lines.append('    else assert(false && "shade not found");')
+
+    cpp_lines.append('return colorType(255, 12, 220);') #  magenta color from tf2 texture-not-found 
     cpp_lines.append('    }')
     cpp_lines.append('}')
     return '\n'.join(cpp_lines)
