@@ -7,13 +7,13 @@ import os
 
 def hex_to_rgb_tuple(hex_color):
     hex_color = hex_color.lstrip('#')
-    r = int(hex_color[0:2], 16) / 255.0
-    g = int(hex_color[2:4], 16) / 255.0
-    b = int(hex_color[4:6], 16) / 255.0
-    return f'glm::vec3({r:.6f}, {g:.6f}, {b:.6f})'
+    r = int(hex_color[0:2], 16)
+    g = int(hex_color[2:4], 16)
+    b = int(hex_color[4:6], 16)
+    return f'colorType({r}, {g}, {b})'
 
 def generate_cpp_color_function(color_name, shades):
-    cpp_lines = [f'constexpr glm::vec3 {color_name}(int shade) {{']
+    cpp_lines = [f'constexpr ColorProxy {color_name}(int shade) {{']
     cpp_lines.append('    switch (shade) {')
     for shade, hex_color in shades.items():
         cpp_lines.append(f'        case {shade}: return {hex_to_rgb_tuple(hex_color)};')

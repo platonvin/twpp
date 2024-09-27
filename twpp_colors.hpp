@@ -1,16 +1,16 @@
-constexpr glm::vec3 slate(int shade) {
+constexpr ColorProxy slate(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.972549, 0.980392, 0.988235);
-        case 100: return glm::vec3(0.945098, 0.960784, 0.976471);
-        case 200: return glm::vec3(0.886275, 0.909804, 0.941176);
-        case 300: return glm::vec3(0.796078, 0.835294, 0.882353);
-        case 400: return glm::vec3(0.580392, 0.639216, 0.721569);
-        case 500: return glm::vec3(0.392157, 0.454902, 0.545098);
-        case 600: return glm::vec3(0.278431, 0.333333, 0.411765);
-        case 700: return glm::vec3(0.200000, 0.254902, 0.333333);
-        case 800: return glm::vec3(0.117647, 0.160784, 0.231373);
-        case 900: return glm::vec3(0.058824, 0.090196, 0.164706);
-        case 950: return glm::vec3(0.007843, 0.023529, 0.090196);
+        case 50: return colorType(248, 250, 252);
+        case 100: return colorType(241, 245, 249);
+        case 200: return colorType(226, 232, 240);
+        case 300: return colorType(203, 213, 225);
+        case 400: return colorType(148, 163, 184);
+        case 500: return colorType(100, 116, 139);
+        case 600: return colorType(71, 85, 105);
+        case 700: return colorType(51, 65, 85);
+        case 800: return colorType(30, 41, 59);
+        case 900: return colorType(15, 23, 42);
+        case 950: return colorType(2, 6, 23);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -19,19 +19,19 @@ constexpr glm::vec3 slate(int shade) {
     }
 }
 
-constexpr glm::vec3 gray(int shade) {
+constexpr ColorProxy gray(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.976471, 0.980392, 0.984314);
-        case 100: return glm::vec3(0.952941, 0.956863, 0.964706);
-        case 200: return glm::vec3(0.898039, 0.905882, 0.921569);
-        case 300: return glm::vec3(0.819608, 0.835294, 0.858824);
-        case 400: return glm::vec3(0.611765, 0.639216, 0.686275);
-        case 500: return glm::vec3(0.419608, 0.447059, 0.501961);
-        case 600: return glm::vec3(0.294118, 0.333333, 0.388235);
-        case 700: return glm::vec3(0.215686, 0.254902, 0.317647);
-        case 800: return glm::vec3(0.121569, 0.160784, 0.215686);
-        case 900: return glm::vec3(0.066667, 0.094118, 0.152941);
-        case 950: return glm::vec3(0.011765, 0.027451, 0.070588);
+        case 50: return colorType(249, 250, 251);
+        case 100: return colorType(243, 244, 246);
+        case 200: return colorType(229, 231, 235);
+        case 300: return colorType(209, 213, 219);
+        case 400: return colorType(156, 163, 175);
+        case 500: return colorType(107, 114, 128);
+        case 600: return colorType(75, 85, 99);
+        case 700: return colorType(55, 65, 81);
+        case 800: return colorType(31, 41, 55);
+        case 900: return colorType(17, 24, 39);
+        case 950: return colorType(3, 7, 18);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -40,19 +40,19 @@ constexpr glm::vec3 gray(int shade) {
     }
 }
 
-constexpr glm::vec3 zinc(int shade) {
+constexpr ColorProxy zinc(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.980392, 0.980392, 0.980392);
-        case 100: return glm::vec3(0.956863, 0.956863, 0.960784);
-        case 200: return glm::vec3(0.894118, 0.894118, 0.905882);
-        case 300: return glm::vec3(0.831373, 0.831373, 0.847059);
-        case 400: return glm::vec3(0.631373, 0.631373, 0.666667);
-        case 500: return glm::vec3(0.443137, 0.443137, 0.478431);
-        case 600: return glm::vec3(0.321569, 0.321569, 0.356863);
-        case 700: return glm::vec3(0.247059, 0.247059, 0.274510);
-        case 800: return glm::vec3(0.152941, 0.152941, 0.164706);
-        case 900: return glm::vec3(0.094118, 0.094118, 0.105882);
-        case 950: return glm::vec3(0.035294, 0.035294, 0.043137);
+        case 50: return colorType(250, 250, 250);
+        case 100: return colorType(244, 244, 245);
+        case 200: return colorType(228, 228, 231);
+        case 300: return colorType(212, 212, 216);
+        case 400: return colorType(161, 161, 170);
+        case 500: return colorType(113, 113, 122);
+        case 600: return colorType(82, 82, 91);
+        case 700: return colorType(63, 63, 70);
+        case 800: return colorType(39, 39, 42);
+        case 900: return colorType(24, 24, 27);
+        case 950: return colorType(9, 9, 11);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -61,19 +61,19 @@ constexpr glm::vec3 zinc(int shade) {
     }
 }
 
-constexpr glm::vec3 neutral(int shade) {
+constexpr ColorProxy neutral(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.980392, 0.980392, 0.980392);
-        case 100: return glm::vec3(0.960784, 0.960784, 0.960784);
-        case 200: return glm::vec3(0.898039, 0.898039, 0.898039);
-        case 300: return glm::vec3(0.831373, 0.831373, 0.831373);
-        case 400: return glm::vec3(0.639216, 0.639216, 0.639216);
-        case 500: return glm::vec3(0.450980, 0.450980, 0.450980);
-        case 600: return glm::vec3(0.321569, 0.321569, 0.321569);
-        case 700: return glm::vec3(0.250980, 0.250980, 0.250980);
-        case 800: return glm::vec3(0.149020, 0.149020, 0.149020);
-        case 900: return glm::vec3(0.090196, 0.090196, 0.090196);
-        case 950: return glm::vec3(0.039216, 0.039216, 0.039216);
+        case 50: return colorType(250, 250, 250);
+        case 100: return colorType(245, 245, 245);
+        case 200: return colorType(229, 229, 229);
+        case 300: return colorType(212, 212, 212);
+        case 400: return colorType(163, 163, 163);
+        case 500: return colorType(115, 115, 115);
+        case 600: return colorType(82, 82, 82);
+        case 700: return colorType(64, 64, 64);
+        case 800: return colorType(38, 38, 38);
+        case 900: return colorType(23, 23, 23);
+        case 950: return colorType(10, 10, 10);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -82,19 +82,19 @@ constexpr glm::vec3 neutral(int shade) {
     }
 }
 
-constexpr glm::vec3 stone(int shade) {
+constexpr ColorProxy stone(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.980392, 0.980392, 0.976471);
-        case 100: return glm::vec3(0.960784, 0.960784, 0.956863);
-        case 200: return glm::vec3(0.905882, 0.898039, 0.894118);
-        case 300: return glm::vec3(0.839216, 0.827451, 0.819608);
-        case 400: return glm::vec3(0.658824, 0.635294, 0.619608);
-        case 500: return glm::vec3(0.470588, 0.443137, 0.423529);
-        case 600: return glm::vec3(0.341176, 0.325490, 0.305882);
-        case 700: return glm::vec3(0.266667, 0.250980, 0.235294);
-        case 800: return glm::vec3(0.160784, 0.145098, 0.141176);
-        case 900: return glm::vec3(0.109804, 0.098039, 0.090196);
-        case 950: return glm::vec3(0.047059, 0.039216, 0.035294);
+        case 50: return colorType(250, 250, 249);
+        case 100: return colorType(245, 245, 244);
+        case 200: return colorType(231, 229, 228);
+        case 300: return colorType(214, 211, 209);
+        case 400: return colorType(168, 162, 158);
+        case 500: return colorType(120, 113, 108);
+        case 600: return colorType(87, 83, 78);
+        case 700: return colorType(68, 64, 60);
+        case 800: return colorType(41, 37, 36);
+        case 900: return colorType(28, 25, 23);
+        case 950: return colorType(12, 10, 9);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -103,19 +103,19 @@ constexpr glm::vec3 stone(int shade) {
     }
 }
 
-constexpr glm::vec3 red(int shade) {
+constexpr ColorProxy red(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.996078, 0.949020, 0.949020);
-        case 100: return glm::vec3(0.996078, 0.886275, 0.886275);
-        case 200: return glm::vec3(0.996078, 0.792157, 0.792157);
-        case 300: return glm::vec3(0.988235, 0.647059, 0.647059);
-        case 400: return glm::vec3(0.972549, 0.443137, 0.443137);
-        case 500: return glm::vec3(0.937255, 0.266667, 0.266667);
-        case 600: return glm::vec3(0.862745, 0.149020, 0.149020);
-        case 700: return glm::vec3(0.725490, 0.109804, 0.109804);
-        case 800: return glm::vec3(0.600000, 0.105882, 0.105882);
-        case 900: return glm::vec3(0.498039, 0.113725, 0.113725);
-        case 950: return glm::vec3(0.270588, 0.039216, 0.039216);
+        case 50: return colorType(254, 242, 242);
+        case 100: return colorType(254, 226, 226);
+        case 200: return colorType(254, 202, 202);
+        case 300: return colorType(252, 165, 165);
+        case 400: return colorType(248, 113, 113);
+        case 500: return colorType(239, 68, 68);
+        case 600: return colorType(220, 38, 38);
+        case 700: return colorType(185, 28, 28);
+        case 800: return colorType(153, 27, 27);
+        case 900: return colorType(127, 29, 29);
+        case 950: return colorType(69, 10, 10);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -124,19 +124,19 @@ constexpr glm::vec3 red(int shade) {
     }
 }
 
-constexpr glm::vec3 orange(int shade) {
+constexpr ColorProxy orange(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(1.000000, 0.968627, 0.929412);
-        case 100: return glm::vec3(1.000000, 0.929412, 0.835294);
-        case 200: return glm::vec3(0.996078, 0.843137, 0.666667);
-        case 300: return glm::vec3(0.992157, 0.729412, 0.454902);
-        case 400: return glm::vec3(0.984314, 0.572549, 0.235294);
-        case 500: return glm::vec3(0.976471, 0.450980, 0.086275);
-        case 600: return glm::vec3(0.917647, 0.345098, 0.047059);
-        case 700: return glm::vec3(0.760784, 0.254902, 0.047059);
-        case 800: return glm::vec3(0.603922, 0.203922, 0.070588);
-        case 900: return glm::vec3(0.486275, 0.176471, 0.070588);
-        case 950: return glm::vec3(0.262745, 0.078431, 0.027451);
+        case 50: return colorType(255, 247, 237);
+        case 100: return colorType(255, 237, 213);
+        case 200: return colorType(254, 215, 170);
+        case 300: return colorType(253, 186, 116);
+        case 400: return colorType(251, 146, 60);
+        case 500: return colorType(249, 115, 22);
+        case 600: return colorType(234, 88, 12);
+        case 700: return colorType(194, 65, 12);
+        case 800: return colorType(154, 52, 18);
+        case 900: return colorType(124, 45, 18);
+        case 950: return colorType(67, 20, 7);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -145,19 +145,19 @@ constexpr glm::vec3 orange(int shade) {
     }
 }
 
-constexpr glm::vec3 amber(int shade) {
+constexpr ColorProxy amber(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(1.000000, 0.984314, 0.921569);
-        case 100: return glm::vec3(0.996078, 0.952941, 0.780392);
-        case 200: return glm::vec3(0.992157, 0.901961, 0.541176);
-        case 300: return glm::vec3(0.988235, 0.827451, 0.301961);
-        case 400: return glm::vec3(0.984314, 0.749020, 0.141176);
-        case 500: return glm::vec3(0.960784, 0.619608, 0.043137);
-        case 600: return glm::vec3(0.850980, 0.466667, 0.023529);
-        case 700: return glm::vec3(0.705882, 0.325490, 0.035294);
-        case 800: return glm::vec3(0.572549, 0.250980, 0.054902);
-        case 900: return glm::vec3(0.470588, 0.207843, 0.058824);
-        case 950: return glm::vec3(0.270588, 0.101961, 0.011765);
+        case 50: return colorType(255, 251, 235);
+        case 100: return colorType(254, 243, 199);
+        case 200: return colorType(253, 230, 138);
+        case 300: return colorType(252, 211, 77);
+        case 400: return colorType(251, 191, 36);
+        case 500: return colorType(245, 158, 11);
+        case 600: return colorType(217, 119, 6);
+        case 700: return colorType(180, 83, 9);
+        case 800: return colorType(146, 64, 14);
+        case 900: return colorType(120, 53, 15);
+        case 950: return colorType(69, 26, 3);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -166,19 +166,19 @@ constexpr glm::vec3 amber(int shade) {
     }
 }
 
-constexpr glm::vec3 yellow(int shade) {
+constexpr ColorProxy yellow(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.996078, 0.988235, 0.909804);
-        case 100: return glm::vec3(0.996078, 0.976471, 0.764706);
-        case 200: return glm::vec3(0.996078, 0.941176, 0.541176);
-        case 300: return glm::vec3(0.992157, 0.878431, 0.278431);
-        case 400: return glm::vec3(0.980392, 0.800000, 0.082353);
-        case 500: return glm::vec3(0.917647, 0.701961, 0.031373);
-        case 600: return glm::vec3(0.792157, 0.541176, 0.015686);
-        case 700: return glm::vec3(0.631373, 0.384314, 0.027451);
-        case 800: return glm::vec3(0.521569, 0.301961, 0.054902);
-        case 900: return glm::vec3(0.443137, 0.247059, 0.070588);
-        case 950: return glm::vec3(0.258824, 0.125490, 0.023529);
+        case 50: return colorType(254, 252, 232);
+        case 100: return colorType(254, 249, 195);
+        case 200: return colorType(254, 240, 138);
+        case 300: return colorType(253, 224, 71);
+        case 400: return colorType(250, 204, 21);
+        case 500: return colorType(234, 179, 8);
+        case 600: return colorType(202, 138, 4);
+        case 700: return colorType(161, 98, 7);
+        case 800: return colorType(133, 77, 14);
+        case 900: return colorType(113, 63, 18);
+        case 950: return colorType(66, 32, 6);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -187,19 +187,19 @@ constexpr glm::vec3 yellow(int shade) {
     }
 }
 
-constexpr glm::vec3 lime(int shade) {
+constexpr ColorProxy lime(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.968627, 0.996078, 0.905882);
-        case 100: return glm::vec3(0.925490, 0.988235, 0.796078);
-        case 200: return glm::vec3(0.850980, 0.976471, 0.615686);
-        case 300: return glm::vec3(0.745098, 0.949020, 0.392157);
-        case 400: return glm::vec3(0.639216, 0.901961, 0.207843);
-        case 500: return glm::vec3(0.517647, 0.800000, 0.086275);
-        case 600: return glm::vec3(0.396078, 0.639216, 0.050980);
-        case 700: return glm::vec3(0.301961, 0.486275, 0.058824);
-        case 800: return glm::vec3(0.247059, 0.384314, 0.070588);
-        case 900: return glm::vec3(0.211765, 0.325490, 0.078431);
-        case 950: return glm::vec3(0.101961, 0.180392, 0.019608);
+        case 50: return colorType(247, 254, 231);
+        case 100: return colorType(236, 252, 203);
+        case 200: return colorType(217, 249, 157);
+        case 300: return colorType(190, 242, 100);
+        case 400: return colorType(163, 230, 53);
+        case 500: return colorType(132, 204, 22);
+        case 600: return colorType(101, 163, 13);
+        case 700: return colorType(77, 124, 15);
+        case 800: return colorType(63, 98, 18);
+        case 900: return colorType(54, 83, 20);
+        case 950: return colorType(26, 46, 5);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -208,19 +208,19 @@ constexpr glm::vec3 lime(int shade) {
     }
 }
 
-constexpr glm::vec3 green(int shade) {
+constexpr ColorProxy green(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.941176, 0.992157, 0.956863);
-        case 100: return glm::vec3(0.862745, 0.988235, 0.905882);
-        case 200: return glm::vec3(0.733333, 0.968627, 0.815686);
-        case 300: return glm::vec3(0.525490, 0.937255, 0.674510);
-        case 400: return glm::vec3(0.290196, 0.870588, 0.501961);
-        case 500: return glm::vec3(0.133333, 0.772549, 0.368627);
-        case 600: return glm::vec3(0.086275, 0.639216, 0.290196);
-        case 700: return glm::vec3(0.082353, 0.501961, 0.239216);
-        case 800: return glm::vec3(0.086275, 0.396078, 0.203922);
-        case 900: return glm::vec3(0.078431, 0.325490, 0.176471);
-        case 950: return glm::vec3(0.019608, 0.180392, 0.086275);
+        case 50: return colorType(240, 253, 244);
+        case 100: return colorType(220, 252, 231);
+        case 200: return colorType(187, 247, 208);
+        case 300: return colorType(134, 239, 172);
+        case 400: return colorType(74, 222, 128);
+        case 500: return colorType(34, 197, 94);
+        case 600: return colorType(22, 163, 74);
+        case 700: return colorType(21, 128, 61);
+        case 800: return colorType(22, 101, 52);
+        case 900: return colorType(20, 83, 45);
+        case 950: return colorType(5, 46, 22);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -229,19 +229,19 @@ constexpr glm::vec3 green(int shade) {
     }
 }
 
-constexpr glm::vec3 emerald(int shade) {
+constexpr ColorProxy emerald(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.925490, 0.992157, 0.960784);
-        case 100: return glm::vec3(0.819608, 0.980392, 0.898039);
-        case 200: return glm::vec3(0.654902, 0.952941, 0.815686);
-        case 300: return glm::vec3(0.431373, 0.905882, 0.717647);
-        case 400: return glm::vec3(0.203922, 0.827451, 0.600000);
-        case 500: return glm::vec3(0.062745, 0.725490, 0.505882);
-        case 600: return glm::vec3(0.019608, 0.588235, 0.411765);
-        case 700: return glm::vec3(0.015686, 0.470588, 0.341176);
-        case 800: return glm::vec3(0.023529, 0.372549, 0.274510);
-        case 900: return glm::vec3(0.023529, 0.305882, 0.231373);
-        case 950: return glm::vec3(0.007843, 0.172549, 0.133333);
+        case 50: return colorType(236, 253, 245);
+        case 100: return colorType(209, 250, 229);
+        case 200: return colorType(167, 243, 208);
+        case 300: return colorType(110, 231, 183);
+        case 400: return colorType(52, 211, 153);
+        case 500: return colorType(16, 185, 129);
+        case 600: return colorType(5, 150, 105);
+        case 700: return colorType(4, 120, 87);
+        case 800: return colorType(6, 95, 70);
+        case 900: return colorType(6, 78, 59);
+        case 950: return colorType(2, 44, 34);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -250,19 +250,19 @@ constexpr glm::vec3 emerald(int shade) {
     }
 }
 
-constexpr glm::vec3 teal(int shade) {
+constexpr ColorProxy teal(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.941176, 0.992157, 0.980392);
-        case 100: return glm::vec3(0.800000, 0.984314, 0.945098);
-        case 200: return glm::vec3(0.600000, 0.964706, 0.894118);
-        case 300: return glm::vec3(0.368627, 0.917647, 0.831373);
-        case 400: return glm::vec3(0.176471, 0.831373, 0.749020);
-        case 500: return glm::vec3(0.078431, 0.721569, 0.650980);
-        case 600: return glm::vec3(0.050980, 0.580392, 0.533333);
-        case 700: return glm::vec3(0.058824, 0.462745, 0.431373);
-        case 800: return glm::vec3(0.066667, 0.368627, 0.349020);
-        case 900: return glm::vec3(0.074510, 0.305882, 0.290196);
-        case 950: return glm::vec3(0.015686, 0.184314, 0.180392);
+        case 50: return colorType(240, 253, 250);
+        case 100: return colorType(204, 251, 241);
+        case 200: return colorType(153, 246, 228);
+        case 300: return colorType(94, 234, 212);
+        case 400: return colorType(45, 212, 191);
+        case 500: return colorType(20, 184, 166);
+        case 600: return colorType(13, 148, 136);
+        case 700: return colorType(15, 118, 110);
+        case 800: return colorType(17, 94, 89);
+        case 900: return colorType(19, 78, 74);
+        case 950: return colorType(4, 47, 46);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -271,19 +271,19 @@ constexpr glm::vec3 teal(int shade) {
     }
 }
 
-constexpr glm::vec3 cyan(int shade) {
+constexpr ColorProxy cyan(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.925490, 0.996078, 1.000000);
-        case 100: return glm::vec3(0.811765, 0.980392, 0.996078);
-        case 200: return glm::vec3(0.647059, 0.952941, 0.988235);
-        case 300: return glm::vec3(0.403922, 0.909804, 0.976471);
-        case 400: return glm::vec3(0.133333, 0.827451, 0.933333);
-        case 500: return glm::vec3(0.023529, 0.713725, 0.831373);
-        case 600: return glm::vec3(0.031373, 0.568627, 0.698039);
-        case 700: return glm::vec3(0.054902, 0.454902, 0.564706);
-        case 800: return glm::vec3(0.082353, 0.368627, 0.458824);
-        case 900: return glm::vec3(0.086275, 0.305882, 0.388235);
-        case 950: return glm::vec3(0.031373, 0.200000, 0.266667);
+        case 50: return colorType(236, 254, 255);
+        case 100: return colorType(207, 250, 254);
+        case 200: return colorType(165, 243, 252);
+        case 300: return colorType(103, 232, 249);
+        case 400: return colorType(34, 211, 238);
+        case 500: return colorType(6, 182, 212);
+        case 600: return colorType(8, 145, 178);
+        case 700: return colorType(14, 116, 144);
+        case 800: return colorType(21, 94, 117);
+        case 900: return colorType(22, 78, 99);
+        case 950: return colorType(8, 51, 68);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -292,19 +292,19 @@ constexpr glm::vec3 cyan(int shade) {
     }
 }
 
-constexpr glm::vec3 sky(int shade) {
+constexpr ColorProxy sky(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.941176, 0.976471, 1.000000);
-        case 100: return glm::vec3(0.878431, 0.949020, 0.996078);
-        case 200: return glm::vec3(0.729412, 0.901961, 0.992157);
-        case 300: return glm::vec3(0.490196, 0.827451, 0.988235);
-        case 400: return glm::vec3(0.219608, 0.741176, 0.972549);
-        case 500: return glm::vec3(0.054902, 0.647059, 0.913725);
-        case 600: return glm::vec3(0.007843, 0.517647, 0.780392);
-        case 700: return glm::vec3(0.011765, 0.411765, 0.631373);
-        case 800: return glm::vec3(0.027451, 0.349020, 0.521569);
-        case 900: return glm::vec3(0.047059, 0.290196, 0.431373);
-        case 950: return glm::vec3(0.031373, 0.184314, 0.286275);
+        case 50: return colorType(240, 249, 255);
+        case 100: return colorType(224, 242, 254);
+        case 200: return colorType(186, 230, 253);
+        case 300: return colorType(125, 211, 252);
+        case 400: return colorType(56, 189, 248);
+        case 500: return colorType(14, 165, 233);
+        case 600: return colorType(2, 132, 199);
+        case 700: return colorType(3, 105, 161);
+        case 800: return colorType(7, 89, 133);
+        case 900: return colorType(12, 74, 110);
+        case 950: return colorType(8, 47, 73);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -313,19 +313,19 @@ constexpr glm::vec3 sky(int shade) {
     }
 }
 
-constexpr glm::vec3 blue(int shade) {
+constexpr ColorProxy blue(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.937255, 0.964706, 1.000000);
-        case 100: return glm::vec3(0.858824, 0.917647, 0.996078);
-        case 200: return glm::vec3(0.749020, 0.858824, 0.996078);
-        case 300: return glm::vec3(0.576471, 0.772549, 0.992157);
-        case 400: return glm::vec3(0.376471, 0.647059, 0.980392);
-        case 500: return glm::vec3(0.231373, 0.509804, 0.964706);
-        case 600: return glm::vec3(0.145098, 0.388235, 0.921569);
-        case 700: return glm::vec3(0.113725, 0.305882, 0.847059);
-        case 800: return glm::vec3(0.117647, 0.250980, 0.686275);
-        case 900: return glm::vec3(0.117647, 0.227451, 0.541176);
-        case 950: return glm::vec3(0.090196, 0.145098, 0.329412);
+        case 50: return colorType(239, 246, 255);
+        case 100: return colorType(219, 234, 254);
+        case 200: return colorType(191, 219, 254);
+        case 300: return colorType(147, 197, 253);
+        case 400: return colorType(96, 165, 250);
+        case 500: return colorType(59, 130, 246);
+        case 600: return colorType(37, 99, 235);
+        case 700: return colorType(29, 78, 216);
+        case 800: return colorType(30, 64, 175);
+        case 900: return colorType(30, 58, 138);
+        case 950: return colorType(23, 37, 84);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -334,19 +334,19 @@ constexpr glm::vec3 blue(int shade) {
     }
 }
 
-constexpr glm::vec3 indigo(int shade) {
+constexpr ColorProxy indigo(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.933333, 0.949020, 1.000000);
-        case 100: return glm::vec3(0.878431, 0.905882, 1.000000);
-        case 200: return glm::vec3(0.780392, 0.823529, 0.996078);
-        case 300: return glm::vec3(0.647059, 0.705882, 0.988235);
-        case 400: return glm::vec3(0.505882, 0.549020, 0.972549);
-        case 500: return glm::vec3(0.388235, 0.400000, 0.945098);
-        case 600: return glm::vec3(0.309804, 0.274510, 0.898039);
-        case 700: return glm::vec3(0.262745, 0.219608, 0.792157);
-        case 800: return glm::vec3(0.215686, 0.188235, 0.639216);
-        case 900: return glm::vec3(0.192157, 0.180392, 0.505882);
-        case 950: return glm::vec3(0.117647, 0.105882, 0.294118);
+        case 50: return colorType(238, 242, 255);
+        case 100: return colorType(224, 231, 255);
+        case 200: return colorType(199, 210, 254);
+        case 300: return colorType(165, 180, 252);
+        case 400: return colorType(129, 140, 248);
+        case 500: return colorType(99, 102, 241);
+        case 600: return colorType(79, 70, 229);
+        case 700: return colorType(67, 56, 202);
+        case 800: return colorType(55, 48, 163);
+        case 900: return colorType(49, 46, 129);
+        case 950: return colorType(30, 27, 75);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -355,19 +355,19 @@ constexpr glm::vec3 indigo(int shade) {
     }
 }
 
-constexpr glm::vec3 violet(int shade) {
+constexpr ColorProxy violet(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.960784, 0.952941, 1.000000);
-        case 100: return glm::vec3(0.929412, 0.913725, 0.996078);
-        case 200: return glm::vec3(0.866667, 0.839216, 0.996078);
-        case 300: return glm::vec3(0.768627, 0.709804, 0.992157);
-        case 400: return glm::vec3(0.654902, 0.545098, 0.980392);
-        case 500: return glm::vec3(0.545098, 0.360784, 0.964706);
-        case 600: return glm::vec3(0.486275, 0.227451, 0.929412);
-        case 700: return glm::vec3(0.427451, 0.156863, 0.850980);
-        case 800: return glm::vec3(0.356863, 0.129412, 0.713725);
-        case 900: return glm::vec3(0.298039, 0.113725, 0.584314);
-        case 950: return glm::vec3(0.180392, 0.062745, 0.396078);
+        case 50: return colorType(245, 243, 255);
+        case 100: return colorType(237, 233, 254);
+        case 200: return colorType(221, 214, 254);
+        case 300: return colorType(196, 181, 253);
+        case 400: return colorType(167, 139, 250);
+        case 500: return colorType(139, 92, 246);
+        case 600: return colorType(124, 58, 237);
+        case 700: return colorType(109, 40, 217);
+        case 800: return colorType(91, 33, 182);
+        case 900: return colorType(76, 29, 149);
+        case 950: return colorType(46, 16, 101);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -376,19 +376,19 @@ constexpr glm::vec3 violet(int shade) {
     }
 }
 
-constexpr glm::vec3 purple(int shade) {
+constexpr ColorProxy purple(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.980392, 0.960784, 1.000000);
-        case 100: return glm::vec3(0.952941, 0.909804, 1.000000);
-        case 200: return glm::vec3(0.913725, 0.835294, 1.000000);
-        case 300: return glm::vec3(0.847059, 0.705882, 0.996078);
-        case 400: return glm::vec3(0.752941, 0.517647, 0.988235);
-        case 500: return glm::vec3(0.658824, 0.333333, 0.968627);
-        case 600: return glm::vec3(0.576471, 0.200000, 0.917647);
-        case 700: return glm::vec3(0.494118, 0.133333, 0.807843);
-        case 800: return glm::vec3(0.419608, 0.129412, 0.658824);
-        case 900: return glm::vec3(0.345098, 0.109804, 0.529412);
-        case 950: return glm::vec3(0.231373, 0.027451, 0.392157);
+        case 50: return colorType(250, 245, 255);
+        case 100: return colorType(243, 232, 255);
+        case 200: return colorType(233, 213, 255);
+        case 300: return colorType(216, 180, 254);
+        case 400: return colorType(192, 132, 252);
+        case 500: return colorType(168, 85, 247);
+        case 600: return colorType(147, 51, 234);
+        case 700: return colorType(126, 34, 206);
+        case 800: return colorType(107, 33, 168);
+        case 900: return colorType(88, 28, 135);
+        case 950: return colorType(59, 7, 100);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -397,19 +397,19 @@ constexpr glm::vec3 purple(int shade) {
     }
 }
 
-constexpr glm::vec3 fuchsia(int shade) {
+constexpr ColorProxy fuchsia(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.992157, 0.956863, 1.000000);
-        case 100: return glm::vec3(0.980392, 0.909804, 1.000000);
-        case 200: return glm::vec3(0.960784, 0.815686, 0.996078);
-        case 300: return glm::vec3(0.941176, 0.670588, 0.988235);
-        case 400: return glm::vec3(0.909804, 0.474510, 0.976471);
-        case 500: return glm::vec3(0.850980, 0.274510, 0.937255);
-        case 600: return glm::vec3(0.752941, 0.149020, 0.827451);
-        case 700: return glm::vec3(0.635294, 0.109804, 0.686275);
-        case 800: return glm::vec3(0.525490, 0.098039, 0.560784);
-        case 900: return glm::vec3(0.439216, 0.101961, 0.458824);
-        case 950: return glm::vec3(0.290196, 0.015686, 0.305882);
+        case 50: return colorType(253, 244, 255);
+        case 100: return colorType(250, 232, 255);
+        case 200: return colorType(245, 208, 254);
+        case 300: return colorType(240, 171, 252);
+        case 400: return colorType(232, 121, 249);
+        case 500: return colorType(217, 70, 239);
+        case 600: return colorType(192, 38, 211);
+        case 700: return colorType(162, 28, 175);
+        case 800: return colorType(134, 25, 143);
+        case 900: return colorType(112, 26, 117);
+        case 950: return colorType(74, 4, 78);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -418,19 +418,19 @@ constexpr glm::vec3 fuchsia(int shade) {
     }
 }
 
-constexpr glm::vec3 pink(int shade) {
+constexpr ColorProxy pink(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(0.992157, 0.949020, 0.972549);
-        case 100: return glm::vec3(0.988235, 0.905882, 0.952941);
-        case 200: return glm::vec3(0.984314, 0.811765, 0.909804);
-        case 300: return glm::vec3(0.976471, 0.658824, 0.831373);
-        case 400: return glm::vec3(0.956863, 0.447059, 0.713725);
-        case 500: return glm::vec3(0.925490, 0.282353, 0.600000);
-        case 600: return glm::vec3(0.858824, 0.152941, 0.466667);
-        case 700: return glm::vec3(0.745098, 0.094118, 0.364706);
-        case 800: return glm::vec3(0.615686, 0.090196, 0.301961);
-        case 900: return glm::vec3(0.513725, 0.094118, 0.262745);
-        case 950: return glm::vec3(0.313725, 0.027451, 0.141176);
+        case 50: return colorType(253, 242, 248);
+        case 100: return colorType(252, 231, 243);
+        case 200: return colorType(251, 207, 232);
+        case 300: return colorType(249, 168, 212);
+        case 400: return colorType(244, 114, 182);
+        case 500: return colorType(236, 72, 153);
+        case 600: return colorType(219, 39, 119);
+        case 700: return colorType(190, 24, 93);
+        case 800: return colorType(157, 23, 77);
+        case 900: return colorType(131, 24, 67);
+        case 950: return colorType(80, 7, 36);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
@@ -439,19 +439,19 @@ constexpr glm::vec3 pink(int shade) {
     }
 }
 
-constexpr glm::vec3 rose(int shade) {
+constexpr ColorProxy rose(int shade) {
     switch (shade) {
-        case 50: return glm::vec3(1.000000, 0.945098, 0.949020);
-        case 100: return glm::vec3(1.000000, 0.894118, 0.901961);
-        case 200: return glm::vec3(0.996078, 0.803922, 0.827451);
-        case 300: return glm::vec3(0.992157, 0.643137, 0.686275);
-        case 400: return glm::vec3(0.984314, 0.443137, 0.521569);
-        case 500: return glm::vec3(0.956863, 0.247059, 0.368627);
-        case 600: return glm::vec3(0.882353, 0.113725, 0.282353);
-        case 700: return glm::vec3(0.745098, 0.070588, 0.235294);
-        case 800: return glm::vec3(0.623529, 0.070588, 0.223529);
-        case 900: return glm::vec3(0.533333, 0.074510, 0.215686);
-        case 950: return glm::vec3(0.298039, 0.019608, 0.098039);
+        case 50: return colorType(255, 241, 242);
+        case 100: return colorType(255, 228, 230);
+        case 200: return colorType(254, 205, 211);
+        case 300: return colorType(253, 164, 175);
+        case 400: return colorType(251, 113, 133);
+        case 500: return colorType(244, 63, 94);
+        case 600: return colorType(225, 29, 72);
+        case 700: return colorType(190, 18, 60);
+        case 800: return colorType(159, 18, 57);
+        case 900: return colorType(136, 19, 55);
+        case 950: return colorType(76, 5, 25);
 #ifdef TWPP_USE_EXCEPTIONS
         default: throw std::out_of_range("shade not found");
 #else
